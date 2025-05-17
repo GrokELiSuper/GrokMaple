@@ -1,0 +1,9 @@
+# Temporary cache files
+*.cache
+
+# Redundant training images
+runs/*/train_batch*.jpg
+runs/*/val_batch*.jpg
+
+# Optional: Exclude logs if not needed
+# *.log
