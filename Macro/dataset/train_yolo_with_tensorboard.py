@@ -30,7 +30,7 @@ def launch_tensorboard(logdir='runs/detect', port=6002):
     except Exception as e:
         logger.error(f"Failed to launch TensorBoard: {e}")
 
-"""
+
 # ?? ??
 def train_yolo():
     try:
@@ -38,7 +38,7 @@ def train_yolo():
         model = YOLO("yolov8l.pt")  # ??? ?? ?? ??
         model.train(
             data="data.yaml",         # data.yaml ??
-            epochs=300,               # ??? ?? ?
+            epochs=200,               # ??? ?? ?
             imgsz=640,                # ??? ?? ?? (YOLO? ?????? resize)
             batch=32,                 # ??? ?? ??? ??
             name="nunu_elna_exp1",    # ?? ?? ?? ??
@@ -51,7 +51,7 @@ def train_yolo():
     except Exception as e:
         logger.error(f"train_yolo failed: {e}")
         raise
-"""
+
 
 # Validate YAML file and dataset paths
 def validate_yaml(yaml_path):
@@ -107,7 +107,7 @@ def fine_tune_yolo(weights="runs/detect/nunu_elna_exp1/weights/best.pt"):
 
         model.train(
             data=yaml_path,
-            epochs=300,
+            epochs=200,
             imgsz=320,
             batch=32,
             name="player_dot_finetune",
@@ -220,5 +220,5 @@ if __name__ == '__main__':
     except Exception as e:
         logger.error(f"Failed to set up log directory or launch TensorBoard: {e}")
         raise
-
+    #train_yolo()
     fine_tune_yolo()  # Run fine-tuning

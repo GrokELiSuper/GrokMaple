@@ -2,7 +2,7 @@ task: detect
 mode: train
 model: yolov8l.pt
 data: data.yaml
-epochs: 300
+epochs: 200
 time: null
 patience: 100
 batch: 32
@@ -13,7 +13,7 @@ cache: false
 device: 0,1,2,3
 workers: 16
 project: runs/detect
-name: nunu_elna_exp12
+name: nunu_elna_exp1
 exist_ok: false
 pretrained: true
 optimizer: auto
@@ -102,4 +102,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: botsort.yaml
-save_dir: runs/detect/nunu_elna_exp12
+save_dir: runs/detect/nunu_elna_exp1
