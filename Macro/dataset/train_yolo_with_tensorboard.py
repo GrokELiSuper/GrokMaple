@@ -21,7 +21,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # TensorBoard ?? ?? (?????)
-def launch_tensorboard(logdir='runs/detect', port=6002):
+def launch_tensorboard(logdir='runs/detect', port=6023):
     try:
         def _run():
             subprocess.run(["tensorboard", "--logdir", logdir, f"--port={port}"])
@@ -38,9 +38,9 @@ def train_yolo():
         model = YOLO("yolov8l.pt")  # ??? ?? ?? ??
         model.train(
             data="data.yaml",         # data.yaml ??
-            epochs=500,               # ??? ?? ?
+            epochs=250,               # ??? ?? ?
             imgsz=640,                # ??? ?? ?? (YOLO? ?????? resize)
-            batch=64,                 # ??? ?? ??? ??
+            batch=32,                 # ??? ?? ??? ??
             name="nunu_elna_exp1",    # ?? ?? ?? ??
             project='runs/detect',    # runs/detect/exp1 ?? ? ?? ??
             device=[0,1,2,3],         # 4? GPU ??
@@ -107,9 +107,9 @@ def fine_tune_yolo(weights="runs/detect/nunu_elna_exp1/weights/best.pt"):
 
         model.train(
             data=yaml_path,
-            epochs=500,
+            epochs=250,
             imgsz=320,
-            batch=64,
+            batch=32,
             name="player_dot_finetune",
             project="runs/fine_tune",
             device=[0,1,2,3],
