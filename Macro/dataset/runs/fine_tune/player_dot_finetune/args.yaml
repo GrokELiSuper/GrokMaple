@@ -2,10 +2,10 @@ task: detect
 mode: train
 model: runs/detect/nunu_elna_exp1/weights/best.pt
 data: player_dot_finetune.yaml
-epochs: 200
+epochs: 500
 time: null
 patience: 100
-batch: 32
+batch: 64
 imgsz: 320
 save: true
 save_period: -1

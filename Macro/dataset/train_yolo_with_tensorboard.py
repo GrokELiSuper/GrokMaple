@@ -38,9 +38,9 @@ def train_yolo():
         model = YOLO("yolov8l.pt")  # ??? ?? ?? ??
         model.train(
             data="data.yaml",         # data.yaml ??
-            epochs=200,               # ??? ?? ?
+            epochs=500,               # ??? ?? ?
             imgsz=640,                # ??? ?? ?? (YOLO? ?????? resize)
-            batch=32,                 # ??? ?? ??? ??
+            batch=64,                 # ??? ?? ??? ??
             name="nunu_elna_exp1",    # ?? ?? ?? ??
             project='runs/detect',    # runs/detect/exp1 ?? ? ?? ??
             device=[0,1,2,3],         # 4? GPU ??
@@ -107,9 +107,9 @@ def fine_tune_yolo(weights="runs/detect/nunu_elna_exp1/weights/best.pt"):
 
         model.train(
             data=yaml_path,
-            epochs=200,
+            epochs=500,
             imgsz=320,
-            batch=32,
+            batch=64,
             name="player_dot_finetune",
             project="runs/fine_tune",
             device=[0,1,2,3],
