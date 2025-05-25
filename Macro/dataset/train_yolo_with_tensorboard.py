@@ -21,7 +21,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # TensorBoard ?? ?? (?????)
-def launch_tensorboard(logdir='runs/detect', port=6023):
+def launch_tensorboard(logdir='runs/detect', port=6013):
     try:
         def _run():
             subprocess.run(["tensorboard", "--logdir", logdir, f"--port={port}"])
