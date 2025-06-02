@@ -21,7 +21,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # TensorBoard ?? ?? (?????)
-def launch_tensorboard(logdir='runs/detect', port=6013):
+def launch_tensorboard(logdir='runs/detect', port=6017):
     try:
         def _run():
             subprocess.run(["tensorboard", "--logdir", logdir, f"--port={port}"])
@@ -220,5 +220,5 @@ if __name__ == '__main__':
     except Exception as e:
         logger.error(f"Failed to set up log directory or launch TensorBoard: {e}")
         raise
-    #train_yolo()
-    fine_tune_yolo()  # Run fine-tuning
+    train_yolo()
+    #fine_tune_yolo()  # Run fine-tuning

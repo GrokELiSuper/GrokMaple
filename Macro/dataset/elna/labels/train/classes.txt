@@ -1,7 +1,7 @@
-player_dot
+hit_object_attacked
 npc
 monster
-ladder_rope
+reward_box_attacked
 skill_attack_normal
 skill_install
 portal
@@ -13,3 +13,4 @@ item_drop
 mid_boss
 shell_bar
 player
+hp_bar
