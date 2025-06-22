@@ -1,6 +1,5 @@
-path: /home/mamo1/Extra/GameGroKMaple/Macro/dataset/elna/crops
+path: /home/mamo1/Extra/GameGroKMaple/Macro/dataset/elna
 train: images/train
 val: images/val
-
 nc: 1
 names: ["player_dot"]
